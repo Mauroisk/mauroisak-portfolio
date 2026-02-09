@@ -1,12 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  output: "export",
+
+  basePath: "/mauroisak-portfolio",
+  assetPrefix: "/mauroisak-portfolio/",
+
   images: {
     unoptimized: true,
   },
-  devIndicators: false,
-}
 
-export default nextConfig
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+
+  devIndicators: false,
+};
+
+export default nextConfig;
