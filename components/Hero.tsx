@@ -122,7 +122,7 @@ export default function Hero() {
           {/* Social icons */}
           <div className="mt-6 flex items-center gap-5 justify-center lg:justify-start">
             <a
-              href="https://www.linkedin.com/in/mauroisak"
+              href="https://www.linkedin.com/in/m4uroisak/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -139,7 +139,7 @@ export default function Hero() {
               </svg>
             </a>
             <a
-              href="https://github.com/mauroisak"
+              href="https://github.com/Mauroisk"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
@@ -167,7 +167,7 @@ export default function Hero() {
         >
           <div className="relative h-56 w-56 sm:h-72 sm:w-72 lg:h-80 lg:w-80 rounded-full neon-border border-2 overflow-hidden">
             <Image
-              src="/perfil.jpg"
+              src="/myself/profile.png"
               alt="Mauro Isak"
               fill
               className="object-cover"
