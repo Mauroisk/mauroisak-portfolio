@@ -6,21 +6,20 @@ const projects = [
   {
     title: "NhaBex",
     description:
-      "Plataforma digital desenvolvida na IT Solution, focada em solucoes tecnologicas para o mercado cabo-verdiano.",
+      "Plataforma digital para o mercado cabo-verdiano (IT Solution).",
     tags: ["React", "Next.js", "Node.js"],
     github: "#",
   },
   {
     title: "CV Innovation",
     description:
-      "Projeto de inovacao desenvolvido durante estagio curricular na IT Solution, focado em transformacao digital em Cabo Verde.",
+      "Projeto de transformacao digital em Cabo Verde (IT Solution).",
     tags: ["JavaScript", "MySQL", "Git"],
     github: "#",
   },
   {
-    title: "AfricanDev Integracoes",
-    description:
-      "Desenvolvimento back-end remoto para a AfricanDev (Brasil), criando APIs e integrando sistemas para clientes internacionais.",
+    title: "AfricanDev",
+    description: "APIs e integracoes back-end para clientes internacionais.",
     tags: ["Node.js", "Python", "SQL"],
     github: "#",
   },
@@ -28,11 +27,7 @@ const projects = [
 
 const containerVariants = {
   hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
+  visible: { transition: { staggerChildren: 0.1 } },
 };
 
 const cardVariants = {
@@ -51,7 +46,7 @@ export default function PetProjects() {
           viewport={{ once: true, margin: "-100px" }}
         >
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Pet <span className="neon-text">Projetos</span>
+            <span className="neon-text">Projetos</span>
           </h2>
           <div className="mt-2 h-1 w-16 rounded-full bg-neon" />
         </motion.div>
@@ -61,52 +56,31 @@ export default function PetProjects() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="mt-10 grid gap-6 sm:grid-cols-2"
+          className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
           {projects.map((project) => (
-            <motion.a
+            <motion.div
               key={project.title}
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
               variants={cardVariants}
-              className="group rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-neon/50 hover:bg-neon/5 block"
+              className="group rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-neon/40"
             >
-              <div className="flex items-start justify-between gap-3">
-                <h3 className="font-semibold text-foreground group-hover:text-neon transition-colors">
-                  {project.title}
-                </h3>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="flex-shrink-0 text-muted-foreground group-hover:text-neon transition-colors"
-                >
-                  <path d="M15 3h6v6" />
-                  <path d="M10 14 21 3" />
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                </svg>
-              </div>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              <h3 className="font-semibold text-foreground group-hover:text-neon transition-colors text-sm">
+                {project.title}
+              </h3>
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
                 {project.description}
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-border bg-secondary px-3 py-1 text-xs text-muted-foreground"
+                    className="rounded-full border border-border bg-secondary px-2.5 py-0.5 text-[11px] text-muted-foreground"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
-            </motion.a>
+            </motion.div>
           ))}
         </motion.div>
       </div>

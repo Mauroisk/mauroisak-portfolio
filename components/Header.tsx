@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -13,11 +13,38 @@ const navLinks = [
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const sectionIds = navLinks.map((l) => l.href.replace("#", ""));
+    const observers: IntersectionObserver[] = [];
+
+    for (const id of sectionIds) {
+      const el = document.getElementById(id);
+      if (!el) continue;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveSection(`#${id}`);
+          }
+        },
+        { rootMargin: "-40% 0px -55% 0px" }
+      );
+      observer.observe(el);
+      observers.push(observer);
+    }
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#" className="text-xl font-bold tracking-tight text-foreground">
+        <a
+          href="#"
+          className="text-xl font-bold tracking-tight text-foreground"
+        >
           Mauro <span className="neon-text">Isak</span>
         </a>
 
@@ -27,7 +54,11 @@ export default function Header() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-neon transition-colors duration-300"
+                className={`text-sm transition-colors duration-300 ${
+                  activeSection === link.href
+                    ? "text-neon font-bold"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
               >
                 {link.label}
               </a>
@@ -74,7 +105,11 @@ export default function Header() {
                   <a
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="text-sm text-muted-foreground hover:text-neon transition-colors duration-300"
+                    className={`text-sm transition-colors duration-300 ${
+                      activeSection === link.href
+                        ? "text-neon font-bold"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
                   >
                     {link.label}
                   </a>

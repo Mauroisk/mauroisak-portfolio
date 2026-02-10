@@ -17,23 +17,15 @@ export default function About() {
           </h2>
           <div className="mt-2 h-1 w-16 rounded-full bg-neon" />
 
-          <div className="mt-8 flex flex-col gap-6 text-secondary-foreground/80 leading-relaxed">
+          <div className="mt-8 flex flex-col gap-4 text-muted-foreground leading-relaxed">
             <p>
-              Profissional focado, com mais de cinco anos de experiencia em
-              desenvolvimento de solucoes em Engenharia Informatica,
-              destacando-se pela comunicacao eficaz, trabalho em equipe e
-              aprendizado continuo.
+              Engenheiro de Sistemas e Informatica pela Universidade Jean Piaget
+              de Cabo Verde, com +5 anos de experiencia em desenvolvimento
+              full-stack. Especializado em React, Next.js e Node.js.
             </p>
-            <p>
-              Formado em Engenharia de Sistemas e Informatica pela Universidade
-              Jean Piaget de Cabo Verde, possuo experiencia em desenvolvimento
-              full-stack utilizando tecnologias modernas como React, Next.js e
-              Node.js. Trabalho tanto em front-end como em back-end, sempre
-              buscando entregar solucoes robustas e de qualidade.
-            </p>
-            <p>
-              <strong className="text-foreground">Idiomas:</strong>{" "}
-              Portugues (Nativo) | Ingles (Avancado)
+            <p className="text-sm">
+              <span className="text-foreground font-medium">Idiomas:</span>{" "}
+              Portugues (Nativo) &middot; Ingles (Avancado)
             </p>
           </div>
         </motion.div>

@@ -5,15 +5,8 @@ __v0_jsx-dev-runtime.ts
 instrumentation-client.js
 instrumentation-client.ts
 
-# Build outputs
-.next/
-out/
-
-# Dependencies
+# Common ignores
 node_modules/
-
-# Env files
+.next/
 .env*.local
-
-# System files
 .DS_Store
