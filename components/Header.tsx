@@ -45,7 +45,7 @@ export default function Header() {
           href="#"
           className="text-xl font-bold tracking-tight text-foreground"
         >
-          Mauro <span className="neon-text">Isak</span>
+          Mauro <span className="neon-text">ISK</span>
         </a>
 
         {/* Desktop nav */}

@@ -58,7 +58,7 @@ export default function Hero() {
           className="flex-1 text-center lg:text-left"
         >
           <p className="text-sm font-mono text-muted-foreground tracking-widest uppercase">
-            Mauro Isak
+            Mauro Isaque Semedo Frederico Furtado
           </p>
           <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl text-balance">
             <TypewriterText />
@@ -117,7 +117,7 @@ export default function Hero() {
         >
           <div className="relative h-56 w-56 sm:h-64 sm:w-64 lg:h-72 lg:w-72 rounded-full neon-border border-2 overflow-hidden">
             <Image
-              src="/perfil.jpg"
+              src="/myself/profile.png"
               alt="Mauro Isak"
               fill
               className="object-cover"
