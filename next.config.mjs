@@ -2,11 +2,12 @@
 const nextConfig = {
   output: "export",
   basePath: "/mauroisak-portfolio",
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  assetPrefix: "/mauroisak-portfolio",
   images: {
     unoptimized: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
   },
 }
 
