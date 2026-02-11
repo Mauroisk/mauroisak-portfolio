@@ -117,7 +117,7 @@ export default function Hero() {
         >
           <div className="relative h-56 w-56 sm:h-64 sm:w-64 lg:h-72 lg:w-72 rounded-full neon-border border-2 overflow-hidden">
             <Image
-              src="/mauroisak-portfolio/myself/profile.png"
+              src="/myself/profile/profile.png"
               alt="Mauro Isak"
               fill
               className="object-cover"
